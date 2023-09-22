@@ -61,6 +61,6 @@ def solution(L, U, b):
 
 result = LU_fatoration(expanded_matrix)
 lista = result.flatten().tolist()
-with open(r"solve_linear_systems\LU_fatoration\input.txt", "w", encoding="utf-8") as file:
+with open(r"solve_linear_systems\LU_fatoration\output.txt", "w", encoding="utf-8") as file:
     for item in lista:
         file.write(f"{item}\n")

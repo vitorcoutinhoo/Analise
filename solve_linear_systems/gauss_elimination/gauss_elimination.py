@@ -64,6 +64,6 @@ x = gauss_elimination(A, b)
 
 # Escreve o resultado no arquivo de saida
 lista = x.flatten().tolist()
-with open(r'solve_linear_systems/gauss_elimination/input.txt', 'w', encoding='utf-8') as file:
+with open(r'solve_linear_systems/gauss_elimination/output.txt', 'w', encoding='utf-8') as file:
     for item in lista:
         file.write(f"{item}\n")
