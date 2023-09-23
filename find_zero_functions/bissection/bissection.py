@@ -46,7 +46,7 @@ def bissection(a_point, b_point):
         if function_c == 0 or float((b_point - a_point)) < error_value:
             # printa no arquivo de saída o número de iterações, o valor de c e o valor da função em c,
             # separados por um caractere de espaço
-            return (f"{count} {c_value:.5f} {function_c:.7f}")
+            return (f"{c_value:.5f} {function_c:.7f}")
 
         # Incrementando o contador
         count += 1
