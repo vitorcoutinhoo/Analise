@@ -1,5 +1,4 @@
 # importando a biblioteca numpy
-import sys
 import numpy as np
 
 expanded_matrix = np.matrix([])
