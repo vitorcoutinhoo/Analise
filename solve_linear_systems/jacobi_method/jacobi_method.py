@@ -15,6 +15,7 @@ with open(r"solve_linear_systems\jacobi_method\input.txt", "r", encoding='utf-8'
 
 error = np.array(error).astype(float)
 
+# verifica se a matriz converge
 def verify_matrix(matrix):
     rows,_ = np.shape(matrix)
     sum = 0
