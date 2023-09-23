@@ -18,12 +18,12 @@ error = np.array(error).astype(float)
 # verifica se a matriz converge
 def verify_matrix(matrix):
     rows,_ = np.shape(matrix)
-    sum = 0
+    aux = 0
     for i in range(rows):
         for j in range(rows):
             if i != j:
-                sum += abs(matrix[i, j])
-                if abs(matrix[i, i]) >= sum:
+                aux += abs(matrix[i, j])
+                if abs(matrix[i, i]) >= aux:
                     return True
                 else:
                     return False
