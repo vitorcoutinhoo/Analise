@@ -15,10 +15,24 @@ with open(r"solve_linear_systems\jacobi_method\input.txt", "r", encoding='utf-8'
 
 error = np.array(error).astype(float)
 
+def verify_matrix(matrix):
+    rows,_ = np.shape(matrix)
+    sum = 0
+    for i in range(rows):
+        for j in range(rows):
+            if i != j:
+                sum += abs(matrix[i, j])
+                if abs(matrix[i, i]) >= sum:
+                    return True
+                else:
+                    return False
+        
 # Resolve o sistema linear Ax = b
 def jacobi_method(matrix, error_tolerance):
     matrix = matrix.astype(float)
     rows, _ = np.shape(matrix)
+    if not verify_matrix(matrix):
+        return None
 
     # Separa a matriz A e o vetor b
     # cria o vetor x
