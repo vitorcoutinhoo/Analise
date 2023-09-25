@@ -19,5 +19,5 @@ OS códigos se encontram em duas pastas:
   execução o arquivo de saída (output.txt) é gerado dentro da mesma pasta.
 
   Obs: Em relação ao arquivo de entrada eu preferi utilizar a matriz expandida, pois achei 
-  mais fácil separar depois de ler do que ler dois arrays seguidos, então só funciona se o 
-  arquivo de entrada for uma matriz expandida.
+  mais fácil separar depois de ler do que ler dois arrays seguidos, então o código só funciona 
+  se o arquivo de entrada for uma matriz expandida.
