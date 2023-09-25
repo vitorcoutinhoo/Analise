@@ -20,4 +20,4 @@ OS códigos se encontram em duas pastas:
 
   Obs: Em relação ao arquivo de entrada eu preferi utilizar a matriz expandida, pois achei 
   mais fácil separar depois de ler do que ler dois arrays seguidos, então só funciona se o 
-  arquivo de entrada for uma amtriz expandida.
+  arquivo de entrada for uma matriz expandida.
