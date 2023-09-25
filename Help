@@ -1,0 +1,23 @@
+Universidade Estadual de Santa Cruz
+Discente - Vítor Coutinho Lima
+
+OS códigos se encontram em duas pastas:
+
+  . find_zero_functions -> Todos os métodos relacionados a encontrar zeros de funções.
+  Cada método está contido em uma pasta com o nome do mesmo, dentro destas pastas está,
+  além do código fonte, o arquivo input.txt, onde deverá ser colocado os dados de entrada.
+  Após rodar o código um arquivo chamado output.txt será gerado dentro da pasta do método
+  executado.
+  
+  Obs: Os valores de saída em todos os métodos está com as casas decimais limitadas, para 
+  alterar esses valores ou retirá-los, basta alterar na linha de retorno da função principal, 
+  que leva o mesmo nome do arquivo .py
+
+  . solve_linear_systems -> Todos os métodos relacionados a resolução de sistemas lineares.
+  Segue o mesmo princípio, cada método está dentro de uma pasta com seu respectivo nome e
+  dentro dessa pasta tem além do código fonte, o arquivo de entrada (input.txt) e após a
+  execução o arquivo de saída (output.txt) é gerado dentro da mesma pasta.
+
+  Obs: Em relação ao arquivo de entrada eu preferi utilizar a matriz expandida, pois achei 
+  mais fácil separar depois de ler do que ler dois arrays seguidos, então só funciona se o 
+  arquivo de entrada for uma amtriz expandida.
