@@ -22,6 +22,7 @@ def false_position(a_point, b_point):
     # Determinando os valores iniciais
     function_a = function(a_point)
     function_b = function(b_point)
+    count = 1
 
     # Verificando se os valores iniciais são válidos
     if function_a * function_b > 0:
@@ -43,8 +44,9 @@ def false_position(a_point, b_point):
 
         function_a = function(a_point)
         function_b = function(b_point)
+        count += 1
 
-    return (f"{c_value:.5f} {function_c:.7f}")
+    return  (f"Número de iterações: {count}\n\nValor de x: {c_value:.5f}\nF(x): {function_c:.7f}")
 
 # Escrevendo o resultado no arquivo de saída
 with open("find_zero_functions/false_position/output.txt", "w", encoding="utf-8") as file:

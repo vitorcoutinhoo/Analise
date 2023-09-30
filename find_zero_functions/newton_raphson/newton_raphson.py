@@ -23,13 +23,15 @@ def derivative(x_point):
 
 # Determina o zero na função por meio do método de Newton-Raphson
 def newton_raphson(x_point):
+    count = 1
     new_x = x_point - (function(x_point) / derivative(x_point))
 
     while abs(function(new_x)) > error_value:
         x_point = new_x
         new_x = x_point - (function(x_point) / derivative(x_point))
+        count += 1
         
-    return f"{new_x:.5f} {function(new_x):.7f}"
+    return (f"Número de iterações: {count}\n\nValor de x: {new_x:.5f}\nF(x): {function(new_x):.7f}")
 
 # Resultado no arquivo de saida
 with open("find_zero_functions/newton_raphson/output.txt", "w", encoding="utf-8") as file:

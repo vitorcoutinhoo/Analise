@@ -44,13 +44,15 @@ def gauss_seidel_method(matrix, error_tolerance):
     x_vector = np.zeros(rows)  
 
     # loop principal
+    count = 0
     while True:
         # Faz uma cópia do vetor x atual para verificar a convergência
         old_x = x_vector.copy()
 
         for i in range(rows):
             # Atualiza cada elemento do vetor x usando o método de Gauss-Seidel
-            x_vector[i] = (b_vector[i] - np.dot(A_matrix[i, :i], x_vector[:i]) - np.dot(A_matrix[i, i+1:], x_vector[i+1:])) / A_matrix[i, i]
+            x_vector[i] = (b_vector[i] - np.dot(A_matrix[i, :i], x_vector[:i]) - 
+                           np.dot(A_matrix[i, i+1:], x_vector[i+1:])) / A_matrix[i, i]
         
         # Calcula o erro como a norma da diferença entre x atual e o anterior
         x_error = np.linalg.norm(x_vector - old_x)  
@@ -58,13 +60,16 @@ def gauss_seidel_method(matrix, error_tolerance):
         # Sai do loop se o erro estiver abaixo da tolerância
         if x_error <= error_tolerance:
             break  
-
-    return x_vector 
+        count += 1
+    
+    return x_vector, count 
 
 # Imprime o resultado
-result = gauss_seidel_method(expanded_matrix, error)
+result, ite = gauss_seidel_method(expanded_matrix, error)
 lista = result.flatten().tolist()
 with open(r"solve_linear_systems\gauss_seidel_method\output.txt", "w", encoding='utf-8') as file:
-    for i in lista:
-        file.write(str(i) + "\n")
+    file.write(f'Número de iterações: {ite}\n')
+    file.write("\n")
+    for item in lista:
+        file.write(f'x{lista.index(item) + 1}: {item}\n')
 

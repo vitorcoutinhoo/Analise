@@ -57,17 +57,21 @@ def jacobi_method(matrix, error_tolerance):
     x_error = np.linalg.norm(x_vector - old_x)
 
     # Enquanto o erro for maior que a tolerância
+    count = 0
     while x_error.all() > error_tolerance:
         old_x = x_vector.copy()
         x_vector = np.dot(B_matrix, x_vector) + d_vector
         x_error = np.linalg.norm(x_vector - old_x)
+        count += 1
 
-    return x_vector
+    return x_vector, count
 
 # Escrita da solução no arquivo de saída
-x = jacobi_method(expanded_matrix, error)
+x, ite = jacobi_method(expanded_matrix, error)
 lista = x.flatten().tolist()
 with open(r"solve_linear_systems\jacobi_method\output.txt", "w", encoding='utf-8') as file:
+    file.write(f'Número de iterações: {ite}\n')
+    file.write("\n")
     for item in lista:
-        file.write(str(item) + "\n")
+        file.write(f'x{lista.index(item) + 1}: {item}\n')
 

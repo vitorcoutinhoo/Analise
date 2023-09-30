@@ -1,4 +1,5 @@
 # importa a biblioteca numpy para trabalhar com matrizes
+import time
 import numpy as np
 
 expanded_matrix = np.matrix([])
@@ -60,10 +61,14 @@ def gauss_elimination(matrix, vector):
 # Ax = b
 A = expanded_matrix[0:, 0:-1]
 b = expanded_matrix[0:, -1:]
+
+start = time.perf_counter()
 x = gauss_elimination(A, b)
+end = time.perf_counter()
 
 # Escreve o resultado no arquivo de saida
 lista = x.flatten().tolist()
 with open(r'solve_linear_systems/gauss_elimination/output.txt', 'w', encoding='utf-8') as file:
-    for item in lista:
-        file.write(f"{item}\n")
+    for i in range(len(lista)):
+        file.write(f"i{i + 1}: {lista[i]}\n")
+    file.write(f"\nTempo de execução: {end - start} segundos")

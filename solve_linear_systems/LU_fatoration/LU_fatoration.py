@@ -1,5 +1,6 @@
 # importa a biblioteca numpy para trabalhar com matrizes
 import numpy as np
+import time
 
 expanded_matrix = np.matrix([])
 with open(r"solve_linear_systems\LU_fatoration\input.txt", "r", encoding="utf-8") as file:
@@ -59,8 +60,13 @@ def solution(L, U, b):
 
     return x_values
 
+start = time.perf_counter()
 result = LU_fatoration(expanded_matrix)
+end = time.perf_counter()
+
+
 lista = result.flatten().tolist()
 with open(r"solve_linear_systems\LU_fatoration\output.txt", "w", encoding="utf-8") as file:
-    for item in lista:
-        file.write(f"{item}\n")
+    for i in range(len(lista)):
+        file.write(f"i{i + 1}: {lista[i]}\n")
+    file.write(f"\nTempo de execução: {end - start} segundos")
